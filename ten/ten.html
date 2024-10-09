@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>ToDo Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="todoCtrl">
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+    <center>
+    <h2>To Do Application using AngularJS</h2>
+    <form ng-submit="todoAdd()">
+        <input type="text" ng-model="todoInput" placeholder="Type your task here..." required>
+        <input type="submit" value="Add">
+    </form><br>
+    <div ng-repeat="x in todoList">
+        <input type="checkbox" ng-model="x.done">
+        <span ng-bind="x.todoText"></span>
+    </div>
+    <button ng-click="remove()">Delete Selected</button>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('todoCtrl', function($scope) {
+            $scope.todoList = [];
+            $scope.todoAdd = function() {
+                $scope.todoList.push({todoText: $scope.todoInput, done: false});
+                $scope.todoInput = "";
+            };
+            $scope.remove = function() {
+                $scope.todoList = $scope.todoList.filter(function(x) {
+                    return !x.done;
+                });
+            };
+        });
+    </script>
+    </center>
+</body>
+</html>

@@ -1,0 +1,10 @@
+create database web8;
+use web8;
+create table students(
+rollno int,
+name varchar(10),
+dept varchar(10)
+);
+
+insert into students values(100,"DCE","Students");
+select * from students

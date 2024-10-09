@@ -1,0 +1,7 @@
+create database ex9;
+use ex9;
+create table login(
+username varchar(20),
+password varchar(20)
+);
+insert into login values("Dce","students");

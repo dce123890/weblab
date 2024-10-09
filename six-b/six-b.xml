@@ -1,0 +1,46 @@
+<?xml version='1.0'?> 
+<?xml-stylesheet type="text/css" href="styles.css"?> 
+<?xml-stylesheet type="text/xsl" href="student.xsl"?>
+
+<students> 
+    <student> 
+        <rollno>22DX08</rollno> 
+        <name>Jeevan Prasad S</name> 
+        <college>PSGPTC</college> 
+        <branch>DCE</branch> 
+        <YOJ>2022</YOJ> 
+        <email>Predator_01@gmail.com</email> 
+    </student> 
+    <student> 
+        <rollno>22DX10</rollno> 
+        <name>Karthik</name> 
+        <college>KCT</college> 
+        <branch>B.TECH (IT)</branch> 
+        <YOJ>2022</YOJ> 
+        <email>karthik@gmail.com</email> 
+    </student> 
+    <student> 
+        <rollno>22DX03</rollno> 
+        <name>Arshad</name> 
+        <college>CIT</college> 
+        <branch>BE (TT)</branch> 
+        <YOJ>2022</YOJ> 
+        <email>arshad@gmail.com</email> 
+    </student> 
+    <student> 
+        <rollno>22DX24</rollno> 
+        <name>Sachin</name> 
+        <college>PSGPTC</college> 
+        <branch>DCE</branch> 
+        <YOJ>2022</YOJ> 
+        <email>sachin@gmail.com</email> 
+    </student> 
+    <student> 
+        <rollno>22DX27</rollno> 
+        <name>Soorya</name> 
+        <college>GPT</college> 
+        <branch>DCE</branch> 
+        <YOJ>2022</YOJ> 
+        <email>soorya@gmail.com</email> 
+    </student> 
+</students>
