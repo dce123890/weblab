@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, red, white);
+            margin: 0;
+            padding: 30px;
+        }
+        form {
+            margin: auto;
+            width: 500px;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 30px;
+        }
+        input, select, textarea, input[type="submit"] {
+            margin: 10px 0;
+            width: 90%;
+            padding: 8px;           
+        }
+        textarea {
+            resize: vertical;
+        }
+        img {
+            width: 100px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // JavaScript function to validate the form
+        function validateForm() {
+            var firstName = document.forms["surveyForm"]["firstName"].value;
+            var lastName = document.forms["surveyForm"]["lastName"].value;
+            var email = document.forms["surveyForm"]["email"].value;
+            var password = document.forms["surveyForm"]["password"].value;
+            var mobile = document.forms["surveyForm"]["mobile"].value;
+            var address= document.forms["surveyForm"]["address"].value;
+
+
+            // Regular expression patterns
+            var namePattern = /^[A-Za-z]+$/;
+            var emailPattern = /^[^@]+@[^@]+\.[a-z]{2,}$/;
+            var mobilePattern = /^[0-9]{10}$/;
+
+            var errorMsg = "";
+
+            // First Name validation
+            if (firstName.length < 6 || !namePattern.test(firstName)) {
+                errorMsg += "First name must contain at least 6 characters and only alphabets.\n";
+            }
+
+            // Last Name validation
+            if (lastName.trim() === "") {
+                errorMsg += "Last name cannot be empty.\n";
+            }
+
+            // Email validation
+            if (!emailPattern.test(email)) {
+                errorMsg += "Please enter a valid email address.\n";
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                errorMsg += "Password must be at least 6 characters long.\n";
+            }
+
+            // Mobile Number validation
+            if (!mobilePattern.test(mobile)) {
+                errorMsg += "Mobile number must be exactly 10 digits.\n";
+            }
+
+            // Address validation
+            if (address.trim() === "") {
+                errorMsg += "Address cannot be empty.\n";
+            }
+
+            if (errorMsg !== "") {
+                alert(errorMsg);
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <!-- Apple Logo -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo">
+
+    <h1>Worker Survey Form</h1>
+
+    <!-- Survey Form with validation -->
+    <form name="surveyForm" onsubmit="return validateForm()">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="mobile" placeholder="Phone Number" required>
+        <textarea name="address" placeholder="Address" rows="4" required></textarea>
+
+        <input type="submit" value="Submit Survey">
+    </form>
+</body>
+</html>
