@@ -1,0 +1,13 @@
+student {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 5fr;
+    gap: 2px;
+    font-family: Arial , sans-serif;
+    margin: auto;
+    padding: 2px;
+    color: black;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
